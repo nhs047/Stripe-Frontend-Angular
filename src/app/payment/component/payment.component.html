@@ -1,0 +1,16 @@
+<div>Payment</div>
+<h2>Collection Payment Intent</h2>
+<div style="width: 300px;">
+ <button (click)="payWithStripe()">Stripe</button>
+</div>
+<ng-template #modalContent>
+  <form [formGroup]="stripeTest" (submit)="pay()">
+    <!-- ngx-stripe-payment -->
+    <ngx-stripe-card
+      [options]="this.cardOptions"
+      [elementsOptions]="this.elementsOptions"
+      containerClass="StripeElement--webkit-autofill"
+    ></ngx-stripe-card>
+  </form>
+</ng-template>
+
